@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="6" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-10T23:08:17 IST" name="Automation" finished-at="2022-05-10T23:08:17 IST" duration-ms="58">
+    <groups>
+      <group name="regression">
+        <method signature="CommonTests.Test1(java.lang.String,java.lang.String)[pri:0, instance:tests.CommonTests@37654521]" name="Test1" class="tests.CommonTests"/>
+        <method signature="CommonTests.Test2()[pri:0, instance:tests.CommonTests@37654521]" name="Test2" class="tests.CommonTests"/>
+        <method signature="CommonTests.Test3()[pri:0, instance:tests.CommonTests@37654521]" name="Test3" class="tests.CommonTests"/>
+        <method signature="CommonTests.Test4()[pri:0, instance:tests.CommonTests@37654521]" name="Test4" class="tests.CommonTests"/>
+        <method signature="CommonTests.Test5()[pri:0, instance:tests.CommonTests@37654521]" name="Test5" class="tests.CommonTests"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="CommonTests.Test2()[pri:0, instance:tests.CommonTests@37654521]" name="Test2" class="tests.CommonTests"/>
+        <method signature="CommonTests.Test4()[pri:0, instance:tests.CommonTests@37654521]" name="Test4" class="tests.CommonTests"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2022-05-10T23:08:17 IST" name="Booking Tests" finished-at="2022-05-10T23:08:17 IST" duration-ms="58">
+      <class name="tests.CommonTests">
+        <test-method signature="Test2()[pri:0, instance:tests.CommonTests@37654521]" started-at="2022-05-10T23:08:17 IST" name="Test2" finished-at="2022-05-10T23:08:17 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test2 -->
+        <test-method signature="Test1(java.lang.String,java.lang.String)[pri:0, instance:tests.CommonTests@37654521]" started-at="2022-05-10T23:08:17 IST" name="Test1" finished-at="2022-05-10T23:08:17 IST" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[HP]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Delhi]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test1 -->
+        <test-method signature="Test4()[pri:0, instance:tests.CommonTests@37654521]" started-at="2022-05-10T23:08:17 IST" name="Test4" finished-at="2022-05-10T23:08:17 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test4 -->
+        <test-method signature="Test3()[pri:0, instance:tests.CommonTests@37654521]" started-at="2022-05-10T23:08:17 IST" name="Test3" finished-at="2022-05-10T23:08:17 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test3 -->
+        <test-method signature="Test5()[pri:0, instance:tests.CommonTests@37654521]" started-at="2022-05-10T23:08:17 IST" name="Test5" finished-at="2022-05-10T23:08:17 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test5 -->
+      </class> <!-- tests.CommonTests -->
+    </test> <!-- Booking Tests -->
+  </suite> <!-- Automation -->
+</testng-results>

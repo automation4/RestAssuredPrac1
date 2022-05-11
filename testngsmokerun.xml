@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="listeners.AnnotationTransformer"></listener>
+    </listeners>
+
+    <test name="Booking Tests">
+        <parameter name="name" value="HP"></parameter>
+        <parameter name="city" value="Delhi"></parameter>
+        <groups>
+            <run>
+                <include name="smoke"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.CommonTests"/>
+        </classes>
+    </test>
+</suite>
