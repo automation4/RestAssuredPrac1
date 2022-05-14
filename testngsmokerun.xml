@@ -3,6 +3,7 @@
 <suite name="Automation" parallel="tests" thread-count="6">
     <listeners>
         <listener class-name="listeners.AnnotationTransformer"></listener>
+        <listener class-name="listeners.TestListners"></listener>
     </listeners>
 
     <test name="Booking Tests">
@@ -17,5 +18,5 @@
             <class name="tests.CommonTests"/>
         </classes>
     </test>
-    
+
 </suite>

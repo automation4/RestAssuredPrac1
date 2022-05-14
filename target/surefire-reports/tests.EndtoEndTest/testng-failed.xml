@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [tests.EndtoEndTest]" verbose="0">
+  <test thread-count="5" name="Command line test(failed)" verbose="0">
+    <classes>
+      <class name="tests.EndtoEndTest">
+        <methods>
+          <include name="getAuth"/>
+          <include name="UpdateBookingDetailsUsingPost"/>
+          <include name="ModifyExistingPayload"/>
+          <include name="UpdatepartialBookingDetailsUsingPatch"/>
+          <include name="GetBookingDetailsfterdelete"/>
+          <include name="deleteBookingDetails"/>
+          <include name="CreateBooking"/>
+        </methods>
+      </class> <!-- tests.EndtoEndTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [tests.EndtoEndTest] -->
