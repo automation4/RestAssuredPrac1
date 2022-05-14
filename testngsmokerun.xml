@@ -17,10 +17,5 @@
             <class name="tests.CommonTests"/>
         </classes>
     </test>
-
-    <test name="Booking E2E Tests">
-        <classes>
-            <class name="tests.EndtoEndTest"/>
-        </classes>
-    </test>
+    
 </suite>
