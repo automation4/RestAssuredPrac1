@@ -1,22 +1,27 @@
-/*
+
 package tests;
 
+import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import utils.GetProperty;
+import restclient.RestFactory;
+import utils.CreateURL;
+import utils.EndPoints;
+
 import java.io.IOException;
-import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
-public class ValidatingJsonSchema extends TestBase {
+public class ValidatingJsonSchema {
     int id;
     @Test
     public void validatingResponseSchemagforBookingid() throws IOException {
-        id = GetProperty.getID("[0].bookingid",rs); //rest assuring jsonpath
-        String reponseasstring = given().spec(rs).get("/booking/" + id).then().extract().response().asString();
-        assertThat(reponseasstring, matchesJsonSchemaInClasspath("schemacheck.json")); //https://www.liquid-technologies.com/online-json-to-schema-converter
+        Response res = RestFactory.getRequest(CreateURL.getURL(EndPoints.GET_RESOURCE));
+        id = res.path("[0].bookingid");
+        Response res1 = RestFactory.getRequest(CreateURL.getURL(EndPoints.GET_RESOURCE),id);
+        String responsetovalidate = res1.asString();
+        assertThat(responsetovalidate, JsonSchemaValidator.matchesJsonSchemaInClasspath("schemacheck.json")); //https://www.liquid-technologies.com/online-json-to-schema-converter
         System.out.println("Schema is correct");
     }
 }
-*/
+

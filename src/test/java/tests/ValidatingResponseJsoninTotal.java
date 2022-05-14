@@ -1,26 +1,30 @@
-/*
+
 package tests;
 
+import io.restassured.response.Response;
 import org.json.JSONException;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.annotations.Test;
-import utils.GetProperty;
+import restclient.RestFactory;
+import utils.CreateURL;
+import utils.EndPoints;
+import utils.JsonUtils;
 
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
-public class ValidatingResponseJsoninTotal extends TestBase {
+public class ValidatingResponseJsoninTotal {
 
     int id;
     @Test
     public void validatingResponseValueforBookingid() throws IOException, JSONException {
-        id = GetProperty.getID("[0].bookingid",rs); //rest assuring jsonpath
-        String acutalresponse = given().spec(rs).get("/booking/645").then().extract().response().asString();
-        String expectedresponse = GetProperty.jsonToString("valuecheckjson.json");
+        Response res = RestFactory.getRequest(CreateURL.getURL(EndPoints.GET_RESOURCE));
+        id = res.path("[0].bookingid");
+        String acutalresponse = RestFactory.getRequest(CreateURL.getURL(EndPoints.GET_RESOURCE),id).asString();
+        String expectedresponse = JsonUtils.jsonToString("valuecheckjson.json");
         JSONAssert.assertEquals(expectedresponse, acutalresponse, JSONCompareMode.STRICT);
         System.out.println("Values are correct");
     }
 }
-*/
