@@ -10,13 +10,14 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+
 public class TestListners implements ITestListener {
 
     ExtentReports report = ExtentManager.getReport();
-    ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<>();
+    public static ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<>();
 
     public void onTestStart(ITestResult result) {
-        ExtentTest test =  report.createTest(result.getTestClass().getName() +"::" +result.getMethod().getMethodName());
+        ExtentTest test =  report.createTest(result.getTestClass().getName() +"->" +result.getMethod().getMethodName());
         extentTestThread.set(test);
     }
 
@@ -26,9 +27,10 @@ public class TestListners implements ITestListener {
 
     public void onTestFailure(ITestResult result) {
         extentTestThread.get().log(Status.FAIL, MarkupHelper.createLabel(result.getMethod().getMethodName(), ExtentColor.RED));
+        extentTestThread.get().log(Status.WARNING, result.getThrowable());
     }
     public void onTestSkipped(ITestResult result) {
-        extentTestThread.get().log(Status.SKIP, MarkupHelper.createLabel(result.getMethod().getMethodName(), ExtentColor.YELLOW));
+        extentTestThread.get().log(Status.SKIP, MarkupHelper.createLabel(result.getMethod().getMethodName(), ExtentColor.ORANGE));
 
     }
 

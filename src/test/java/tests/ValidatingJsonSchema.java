@@ -3,6 +3,7 @@ package tests;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import restclient.RestFactory;
 import utils.CreateURL;
@@ -21,7 +22,7 @@ public class ValidatingJsonSchema {
         Response res1 = RestFactory.getRequest(CreateURL.getURL(EndPoints.GET_RESOURCE),id);
         String responsetovalidate = res1.asString();
         assertThat(responsetovalidate, JsonSchemaValidator.matchesJsonSchemaInClasspath("schemacheck.json")); //https://www.liquid-technologies.com/online-json-to-schema-converter
-        System.out.println("Schema is correct");
+        Reporter.log("Schema is correct");
     }
 }
 

@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import org.json.JSONException;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import restclient.RestFactory;
 import utils.CreateURL;
@@ -12,8 +13,6 @@ import utils.EndPoints;
 import utils.JsonUtils;
 
 import java.io.IOException;
-
-import static io.restassured.RestAssured.given;
 
 public class ValidatingResponseJsoninTotal {
 
@@ -25,6 +24,6 @@ public class ValidatingResponseJsoninTotal {
         String acutalresponse = RestFactory.getRequest(CreateURL.getURL(EndPoints.GET_RESOURCE),id).asString();
         String expectedresponse = JsonUtils.jsonToString("valuecheckjson.json");
         JSONAssert.assertEquals(expectedresponse, acutalresponse, JSONCompareMode.STRICT);
-        System.out.println("Values are correct");
+        Reporter.log("Values are correct");
     }
 }

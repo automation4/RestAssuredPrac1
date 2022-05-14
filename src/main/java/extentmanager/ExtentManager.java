@@ -15,7 +15,7 @@ public class ExtentManager {
         }
 
     public static ExtentReports createReport () {
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter( "extentreport\\extentreport1.html");
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter( "extentreport\\extentreport.html");
         htmlReporter.config().setDocumentTitle("Automation");
         htmlReporter.config().setTheme(Theme.DARK);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
