@@ -13,17 +13,16 @@ import java.io.IOException;
 
 
 public class CreateBooking {
-    ExtentTest test = TestListners.extentTestThread.get();
     static int id;
     @Test(dataProvider = "datafromexcel")
     public void createBookingusingExcel(Object payload) {
-        test.log(Status.INFO,"Getting Payload from Excel");
+        TestListners.extentTestThread.get().log(Status.INFO,"Getting Payload from Excel");
 
         System.out.println("Paylod -> " + payload);
-        test.log(Status.INFO,"Hitting post request");
+        TestListners.extentTestThread.get().log(Status.INFO,"Hitting post request");
         Response res = RestFactory.postRequest(CreateURL.getURL(EndPoints.POST_RESOURCE), payload.toString());
         System.out.println(res.asString());
-        test.log(Status.INFO,"Getting booking id");
+        TestListners.extentTestThread.get().log(Status.INFO,"Getting booking id");
         id = res.path("bookingid");
         System.out.println("id -> " + id);
     }
@@ -43,19 +42,19 @@ public class CreateBooking {
 
     @Test(dataProvider = "datafromexcel")
     public void createBookingusingProperty(Object payload) {
-        test.log(Status.INFO,"Getting Payload from Property files");
+        TestListners.extentTestThread.get().log(Status.INFO,"Getting Payload from Property files");
 
         System.out.println("Paylod -> " + payload);
         Response res = RestFactory.postRequest(CreateURL.getURL(EndPoints.POST_RESOURCE), payload.toString());
         System.out.println(res.asString());
-        test.log(Status.INFO,"Getting booking id");
+        TestListners.extentTestThread.get().log(Status.INFO,"Getting booking id");
         id = res.path("bookingid");
         System.out.println("id -> " + id);
     }
 
     @DataProvider(name ="datafromproperty")
     public Object[][] getDataFromProperty() throws IOException {
-        test.log(Status.INFO,"returning  Payload from Property files to test");
+        TestListners.extentTestThread.get().log(Status.INFO,"returning  Payload from Property files to test");
 
         String data = PropertyUtils.getProperty("samplepayload");
         Object[][] data1 = new Object[1][1];

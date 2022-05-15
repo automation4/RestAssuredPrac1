@@ -5,6 +5,7 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import restclient.RestFactory;
 import utils.CreateURL;
 import utils.EndPoints;
