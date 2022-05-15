@@ -26,7 +26,7 @@ public class InterviewQuestions {
     @Test
     public void RemoveDuplicatesfromtheSortedArray1(){
        // int arr[] = {1,1,1,3,3,5,5};
-        int arr[] = {5,5,10,10,20};
+        int arr[] = {5,5,10,10,30};
 
         int count =1;
         int checkint = arr[0];
